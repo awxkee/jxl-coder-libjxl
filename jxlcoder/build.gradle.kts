@@ -64,7 +64,7 @@ mavenPublishing {
 }
 
 android {
-    namespace = "io.github.awxkee.jxlcoder"
+    namespace = "io.github.awxkee.jxlcoderlibjxl"
     compileSdk = 36
 
     defaultConfig {
