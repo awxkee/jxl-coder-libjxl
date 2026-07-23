@@ -23,6 +23,11 @@ jobs:
           cache: gradle
       - name: Set version variable
         run: echo "GITHUB_REF_NAME=$GITHUB_REF_NAME" >> $GITHUB_ENV
+      - name: Decode signing key
+        env:
+          SIGNING_KEY_B64: ${{ secrets.ORG_GRADLE_PROJECT_SIGNINGINMEMORYKEY }}
+        run: |
+          echo "$SIGNING_KEY_B64" | base64 -d > /tmp/signing-key.asc
       - name: Compile to Maven Central
         env:
           VERSION_NAME: ${{ env.GITHUB_REF_NAME }}
@@ -32,4 +37,6 @@ jobs:
           ORG_GRADLE_PROJECT_signingInMemoryKeyId: ${{ secrets.ORG_GRADLE_PROJECT_SIGNINGINMEMORYKEYID }}
           ORG_GRADLE_PROJECT_signingInMemoryKeyPassword: ${{ secrets.ORG_GRADLE_PROJECT_SIGNINGINMEMORYKEYPASSWORD }}
           PUBLISH_STATE: Release
-        run: bash ./gradlew jxlCoder:publishAllPublicationsToMavenCentralRepository
+        run: |
+          export ORG_GRADLE_PROJECT_signingInMemoryKey="$(cat /tmp/signing-key.asc)"
+          bash ./gradlew jxlCoder:publishAllPublicationsToMavenCentralRepository
