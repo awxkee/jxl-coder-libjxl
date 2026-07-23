@@ -50,7 +50,7 @@ using namespace std;
 
 extern "C"
 JNIEXPORT jbyteArray JNICALL
-Java_com_awxkee_jxlcoder_JxlCoder_encodeImpl(JNIEnv *env, jobject thiz, jobject bitmap,
+Java_com_awxkee_jxlcoderlibjxl_JxlCoder_encodeImpl(JNIEnv *env, jobject thiz, jobject bitmap,
                                              jint javaColorSpace, jint javaCompressionOption,
                                              jint effort, jstring bitmapColorProfile,
                                              jint dataSpace, jint jQuality, jint decodingSpeed) {

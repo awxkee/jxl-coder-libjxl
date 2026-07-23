@@ -20,13 +20,13 @@ mavenPublishing {
         )
     )
 
-    coordinates("io.github.awxkee", "jxl-coder", System.getenv("VERSION_NAME") ?: "0.0.10")
+    coordinates("io.github.awxkee", "jxl-coder-libjxl", System.getenv("VERSION_NAME") ?: "0.0.10")
 
     pom {
         name.set("Jxl Coder")
         description.set("JPEG XL encoder/decoder for Android")
         inceptionYear.set("2023")
-        url.set("https://github.com/awxkee/jxl-coder")
+        url.set("https://github.com/awxkee/jxl-coder-libjxl")
         licenses {
             license {
                 name.set("The Apache License, Version 2.0")
@@ -48,9 +48,9 @@ mavenPublishing {
             }
         }
         scm {
-            url.set("https://github.com/awxkee/jxl-coder")
-            connection.set("scm:git:git@github.com:awxkee/jxl-coder.git")
-            developerConnection.set("scm:git:ssh://git@github.com/awxkee/jxl-coder.git")
+            url.set("https://github.com/awxkee/jxl-coder-libjxl")
+            connection.set("scm:git:git@github.com:awxkee/jxl-coder-libjxl.git")
+            developerConnection.set("scm:git:ssh://git@github.com/awxkee/jxl-coder-libjxl.git")
         }
     }
 

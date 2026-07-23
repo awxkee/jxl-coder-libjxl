@@ -6,7 +6,7 @@ plugins {
 }
 
 android {
-    namespace = "com.awxkee.jxlcoder"
+    namespace = "com.awxkee.jxlcoderlibjxl"
     compileSdk = 36
 
     defaultConfig {

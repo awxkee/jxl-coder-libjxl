@@ -44,7 +44,7 @@ using namespace std;
 
 extern "C"
 JNIEXPORT jlong JNICALL
-Java_com_awxkee_jxlcoder_JxlAnimatedImage_createCoordinator(JNIEnv *env, jobject thiz,
+Java_com_awxkee_jxlcoderlibjxl_JxlAnimatedImage_createCoordinator(JNIEnv *env, jobject thiz,
                                                             jobject byteBuffer,
                                                             jint javaPreferredColorConfig,
                                                             jint javaScaleMode,
@@ -92,7 +92,7 @@ Java_com_awxkee_jxlcoder_JxlAnimatedImage_createCoordinator(JNIEnv *env, jobject
 
 extern "C"
 JNIEXPORT jlong JNICALL
-Java_com_awxkee_jxlcoder_JxlAnimatedImage_createCoordinatorByteArray(JNIEnv *env, jobject thiz,
+Java_com_awxkee_jxlcoderlibjxl_JxlAnimatedImage_createCoordinatorByteArray(JNIEnv *env, jobject thiz,
                                                                      jbyteArray byteArray,
                                                                      jint javaPreferredColorConfig,
                                                                      jint javaScaleMode,
@@ -128,7 +128,7 @@ Java_com_awxkee_jxlcoder_JxlAnimatedImage_createCoordinatorByteArray(JNIEnv *env
 
 extern "C"
 JNIEXPORT void JNICALL
-Java_com_awxkee_jxlcoder_JxlAnimatedImage_closeAndReleaseAnimatedImage(JNIEnv *env, jobject thiz,
+Java_com_awxkee_jxlcoderlibjxl_JxlAnimatedImage_closeAndReleaseAnimatedImage(JNIEnv *env, jobject thiz,
                                                                        jlong coordinatorPtr) {
   auto coordinator = reinterpret_cast<JxlAnimatedDecoderCoordinator *>(coordinatorPtr);
   delete coordinator;
@@ -136,7 +136,7 @@ Java_com_awxkee_jxlcoder_JxlAnimatedImage_closeAndReleaseAnimatedImage(JNIEnv *e
 
 extern "C"
 JNIEXPORT jint JNICALL
-Java_com_awxkee_jxlcoder_JxlAnimatedImage_getNumberOfFrames(JNIEnv *env, jobject thiz,
+Java_com_awxkee_jxlcoderlibjxl_JxlAnimatedImage_getNumberOfFrames(JNIEnv *env, jobject thiz,
                                                             jlong coordinatorPtr) {
   auto coordinator = reinterpret_cast<JxlAnimatedDecoderCoordinator *>(coordinatorPtr);
   return coordinator->numberOfFrames();
@@ -144,7 +144,7 @@ Java_com_awxkee_jxlcoder_JxlAnimatedImage_getNumberOfFrames(JNIEnv *env, jobject
 
 extern "C"
 JNIEXPORT jint JNICALL
-Java_com_awxkee_jxlcoder_JxlAnimatedImage_getFrameDurationImpl(JNIEnv *env, jobject thiz,
+Java_com_awxkee_jxlcoderlibjxl_JxlAnimatedImage_getFrameDurationImpl(JNIEnv *env, jobject thiz,
                                                                jlong coordinatorPtr, jint frame) {
   auto coordinator = reinterpret_cast<JxlAnimatedDecoderCoordinator *>(coordinatorPtr);
   return coordinator->frameDuration(frame);
@@ -152,14 +152,14 @@ Java_com_awxkee_jxlcoder_JxlAnimatedImage_getFrameDurationImpl(JNIEnv *env, jobj
 
 extern "C"
 JNIEXPORT jint JNICALL
-Java_com_awxkee_jxlcoder_JxlAnimatedImage_getLoopsCount(JNIEnv *env, jobject thiz,
+Java_com_awxkee_jxlcoderlibjxl_JxlAnimatedImage_getLoopsCount(JNIEnv *env, jobject thiz,
                                                         jlong coordinatorPtr) {
   auto coordinator = reinterpret_cast<JxlAnimatedDecoderCoordinator *>(coordinatorPtr);
   return coordinator->loopsCount();
 }
 extern "C"
 JNIEXPORT jobject JNICALL
-Java_com_awxkee_jxlcoder_JxlAnimatedImage_getFrameImpl(JNIEnv *env, jobject thiz,
+Java_com_awxkee_jxlcoderlibjxl_JxlAnimatedImage_getFrameImpl(JNIEnv *env, jobject thiz,
                                                        jlong coordinatorPtr, jint frameIndex,
                                                        jint scaleWidth, jint scaleHeight) {
   try {
@@ -411,7 +411,7 @@ Java_com_awxkee_jxlcoder_JxlAnimatedImage_getFrameImpl(JNIEnv *env, jobject thiz
 
 extern "C"
 JNIEXPORT jint JNICALL
-Java_com_awxkee_jxlcoder_JxlAnimatedImage_getHeightImpl(JNIEnv *env, jobject thiz,
+Java_com_awxkee_jxlcoderlibjxl_JxlAnimatedImage_getHeightImpl(JNIEnv *env, jobject thiz,
                                                         jlong coordinatorPtr) {
   auto coordinator = reinterpret_cast<JxlAnimatedDecoderCoordinator *>(coordinatorPtr);
   return coordinator->getHeight();
@@ -419,7 +419,7 @@ Java_com_awxkee_jxlcoder_JxlAnimatedImage_getHeightImpl(JNIEnv *env, jobject thi
 
 extern "C"
 JNIEXPORT jint JNICALL
-Java_com_awxkee_jxlcoder_JxlAnimatedImage_getWidthImpl(JNIEnv *env, jobject thiz,
+Java_com_awxkee_jxlcoderlibjxl_JxlAnimatedImage_getWidthImpl(JNIEnv *env, jobject thiz,
                                                        jlong coordinatorPtr) {
   auto coordinator = reinterpret_cast<JxlAnimatedDecoderCoordinator *>(coordinatorPtr);
   return coordinator->getWidth();

@@ -48,7 +48,7 @@ using namespace std;
 
 extern "C"
 JNIEXPORT void JNICALL
-Java_com_awxkee_jxlcoder_JxlAnimatedEncoder_closeAndReleaseAnimatedEncoder(JNIEnv *env,
+Java_com_awxkee_jxlcoderlibjxl_JxlAnimatedEncoder_closeAndReleaseAnimatedEncoder(JNIEnv *env,
                                                                            jobject thiz,
                                                                            jlong coordinatorPtr) {
   auto coordinator = reinterpret_cast<JxlAnimatedEncoderCoordinator *>(coordinatorPtr);
@@ -57,7 +57,7 @@ Java_com_awxkee_jxlcoder_JxlAnimatedEncoder_closeAndReleaseAnimatedEncoder(JNIEn
 
 extern "C"
 JNIEXPORT jlong JNICALL
-Java_com_awxkee_jxlcoder_JxlAnimatedEncoder_createEncodeCoordinator(JNIEnv *env, jobject thiz,
+Java_com_awxkee_jxlcoderlibjxl_JxlAnimatedEncoder_createEncodeCoordinator(JNIEnv *env, jobject thiz,
                                                                     jint width, jint height,
                                                                     jint numLoops,
                                                                     jint javaColorSpace,
@@ -145,7 +145,7 @@ Java_com_awxkee_jxlcoder_JxlAnimatedEncoder_createEncodeCoordinator(JNIEnv *env,
 
 extern "C"
 JNIEXPORT void JNICALL
-Java_com_awxkee_jxlcoder_JxlAnimatedEncoder_addFrameImpl(JNIEnv *env, jobject thiz,
+Java_com_awxkee_jxlcoderlibjxl_JxlAnimatedEncoder_addFrameImpl(JNIEnv *env, jobject thiz,
                                                          jlong coordinatorPtr, jobject bitmap,
                                                          jint duration) {
   try {
@@ -355,7 +355,7 @@ Java_com_awxkee_jxlcoder_JxlAnimatedEncoder_addFrameImpl(JNIEnv *env, jobject th
 
 extern "C"
 JNIEXPORT jbyteArray JNICALL
-Java_com_awxkee_jxlcoder_JxlAnimatedEncoder_encodeAnimatedImpl(JNIEnv *env, jobject thiz,
+Java_com_awxkee_jxlcoderlibjxl_JxlAnimatedEncoder_encodeAnimatedImpl(JNIEnv *env, jobject thiz,
                                                                jlong coordinatorPtr) {
   try {
     auto coordinator = reinterpret_cast<JxlAnimatedEncoderCoordinator *>(coordinatorPtr);

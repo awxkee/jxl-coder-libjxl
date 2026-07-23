@@ -98,7 +98,7 @@ std::string getGifError(EasyGifReader::Error gifError) {
 
 extern "C"
 JNIEXPORT jbyteArray JNICALL
-Java_com_awxkee_jxlcoder_JxlCoder_gif2JXLImpl(JNIEnv *env, jobject thiz, jbyteArray gifData,
+Java_com_awxkee_jxlcoderlibjxl_JxlCoder_gif2JXLImpl(JNIEnv *env, jobject thiz, jbyteArray gifData,
                                               jint quality, jint effort, jint decodingSpeed) {
   try {
     if (effort < 0 || effort > 10) {
@@ -199,7 +199,7 @@ void BlendOverAPNG(unsigned char **rows_dst, unsigned char **rows_src, unsigned 
 
 extern "C"
 JNIEXPORT jbyteArray JNICALL
-Java_com_awxkee_jxlcoder_JxlCoder_apng2JXLImpl(JNIEnv *env,
+Java_com_awxkee_jxlcoderlibjxl_JxlCoder_apng2JXLImpl(JNIEnv *env,
                                                jobject thiz,
                                                jbyteArray apngData,
                                                jint quality,

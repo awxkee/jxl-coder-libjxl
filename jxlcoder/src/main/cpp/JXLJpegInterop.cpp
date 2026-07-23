@@ -37,7 +37,7 @@
 
 extern "C"
 JNIEXPORT jbyteArray JNICALL
-Java_com_awxkee_jxlcoder_JxlCoder_constructImpl(JNIEnv *env, jobject thiz, jbyteArray fromJpegData) {
+Java_com_awxkee_jxlcoderlibjxl_JxlCoder_constructImpl(JNIEnv *env, jobject thiz, jbyteArray fromJpegData) {
   try {
     auto totalLength = env->GetArrayLength(fromJpegData);
     if (totalLength <= 0) {
@@ -67,7 +67,7 @@ Java_com_awxkee_jxlcoder_JxlCoder_constructImpl(JNIEnv *env, jobject thiz, jbyte
 
 extern "C"
 JNIEXPORT jbyteArray JNICALL
-Java_com_awxkee_jxlcoder_JxlCoder_reconstructImpl(JNIEnv *env, jobject thiz, jbyteArray fromJpegXlData) {
+Java_com_awxkee_jxlcoderlibjxl_JxlCoder_reconstructImpl(JNIEnv *env, jobject thiz, jbyteArray fromJpegXlData) {
   try {
     auto totalLength = env->GetArrayLength(fromJpegXlData);
     if (totalLength <= 0) {

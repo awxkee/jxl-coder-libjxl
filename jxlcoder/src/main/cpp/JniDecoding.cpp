@@ -332,7 +332,7 @@ jobject decodeSampledImageImpl(JNIEnv *env, std::vector<uint8_t> &imageData, jin
 
 extern "C"
 JNIEXPORT jobject JNICALL
-Java_com_awxkee_jxlcoder_JxlCoder_decodeSampledImpl(JNIEnv *env, jobject thiz,
+Java_com_awxkee_jxlcoderlibjxl_JxlCoder_decodeSampledImpl(JNIEnv *env, jobject thiz,
                                                     jbyteArray byte_array, jint scaledWidth,
                                                     jint scaledHeight,
                                                     jint javaPreferredColorConfig,
@@ -360,7 +360,7 @@ Java_com_awxkee_jxlcoder_JxlCoder_decodeSampledImpl(JNIEnv *env, jobject thiz,
 
 extern "C"
 JNIEXPORT jobject JNICALL
-Java_com_awxkee_jxlcoder_JxlCoder_decodeByteBufferSampledImpl(JNIEnv *env, jobject thiz,
+Java_com_awxkee_jxlcoderlibjxl_JxlCoder_decodeByteBufferSampledImpl(JNIEnv *env, jobject thiz,
                                                               jobject byteBuffer, jint scaledWidth,
                                                               jint scaledHeight,
                                                               jint preferredColorConfig,
@@ -393,7 +393,7 @@ Java_com_awxkee_jxlcoder_JxlCoder_decodeByteBufferSampledImpl(JNIEnv *env, jobje
 
 extern "C"
 JNIEXPORT jobject JNICALL
-Java_com_awxkee_jxlcoder_JxlCoder_getSizeImpl(JNIEnv *env, jobject thiz, jbyteArray byte_array) {
+Java_com_awxkee_jxlcoderlibjxl_JxlCoder_getSizeImpl(JNIEnv *env, jobject thiz, jbyteArray byte_array) {
   auto totalLength = env->GetArrayLength(byte_array);
   std::shared_ptr<void> srcBuffer(static_cast<char *>(malloc(totalLength)),
                                   [](void *b) { free(b); });

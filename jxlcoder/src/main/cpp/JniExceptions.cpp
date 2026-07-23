@@ -31,19 +31,19 @@
 
 jint throwImageSizeException(JNIEnv *env, const char* message) {
   jclass exClass;
-  exClass = env->FindClass("com/awxkee/jxlcoder/InvalidImageSizeException");
+  exClass = env->FindClass("com/awxkee/jxlcoderlibjxl/InvalidImageSizeException");
   return env->ThrowNew(exClass, message);
 }
 
 jint throwInvalidJXLException(JNIEnv *env) {
   jclass exClass;
-  exClass = env->FindClass("com/awxkee/jxlcoder/InvalidJXLException");
+  exClass = env->FindClass("com/awxkee/jxlcoderlibjxl/InvalidJXLException");
   return env->ThrowNew(exClass, "");
 }
 
 jint throwPixelsException(JNIEnv *env) {
   jclass exClass;
-  exClass = env->FindClass("com/awxkee/jxlcoder/LockPixelsException");
+  exClass = env->FindClass("com/awxkee/jxlcoderlibjxl/LockPixelsException");
   return env->ThrowNew(exClass, "");
 }
 
@@ -55,19 +55,19 @@ jint throwException(JNIEnv *env, std::string &msg) {
 
 jint throwCantCompressImage(JNIEnv *env) {
   jclass exClass;
-  exClass = env->FindClass("com/awxkee/jxlcoder/JXLCoderCompressionException");
+  exClass = env->FindClass("com/awxkee/jxlcoderlibjxl/JXLCoderCompressionException");
   return env->ThrowNew(exClass, "");
 }
 
 jint throwInvalidColorSpaceException(JNIEnv *env) {
   jclass exClass;
-  exClass = env->FindClass("com/awxkee/jxlcoder/InvalidColorSpaceException");
+  exClass = env->FindClass("com/awxkee/jxlcoderlibjxl/InvalidColorSpaceException");
   return env->ThrowNew(exClass, "");
 }
 
 jint throwInvalidCompressionOptionException(JNIEnv *env) {
   jclass exClass;
-  exClass = env->FindClass("com/awxkee/jxlcoder/InvalidCompressionOptionException");
+  exClass = env->FindClass("com/awxkee/jxlcoderlibjxl/InvalidCompressionOptionException");
   return env->ThrowNew(exClass, "");
 }
 
